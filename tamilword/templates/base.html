@@ -1,0 +1,15 @@
+{% extends 'home.html'%}
+{% block word %}
+<div class="getletter">
+  <ul>
+  <input type="text" name="box1" placeholder="enter the 1 letter of word" style="width:60%; border-radius: 10px; height:30px " />
+   </ul>
+  {% for i in data %}
+     <ul>
+       <input type="text" name="box{{i}}" placeholder="enter the {{i}} letter of word" style="width:60%; border-radius: 10px; height:30px " maxlength="10" />
+     </ul>
+  {% endfor %}
+</div><br><br>
+  <input type="submit" value="get word" name="input" />
+      
+{% endblock%}

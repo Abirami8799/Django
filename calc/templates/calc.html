@@ -1,0 +1,39 @@
+{% extends 'base.html'%}
+{% block content %}
+<style>
+    .container{
+        margin:auto;
+        height: 300px;
+        width: 600px;
+        box-sizing: border-box;
+        border: 3px solid rgb(54, 73, 240);
+        border-radius:12px;
+        text-align:center;      
+    }
+    .content{
+      padding :80px;
+      }
+    .body{
+    padding:30px;
+    text-align:center;
+}
+
+</style>
+</head>
+<div class="body"> 
+<div class="container">
+    <div class="content">
+     <form action="submit" method="POST">
+         {% csrf_token %}
+      Enter the word length<input type="text" name="num1" style="border-radius:10px"><br><br>
+      Enter the word length<input type="text" name="num2" style="border-radius:10px"><br><br>
+      <div style="padding: 40px;">
+         <input  type="submit" value="Add" name="add" />
+         <input  type="submit" value="Subtract" name="sub" />
+         <input  type="submit" value="Multiply" name="mul" />
+         <input  type="submit" value="Divide" name="div" />
+         </div>
+      </form>
+  </div>
+</div>
+{% endblock %}

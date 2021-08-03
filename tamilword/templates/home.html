@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tamilword</title>
+    <style>
+        ::placeholder{
+            text-align: center;
+        }
+        body{
+            text-align: center;
+        }
+        .input{
+            margin: auto;
+            padding: 20px;
+            height:80px;
+            width: 60%;
+            box-sizing: border-box;
+            
+        }
+        .getletter{
+            margin: auto;
+            padding: 20px;
+            height: 300px;
+            width: 60%;
+            text-align: center;
+            box-sizing: border-box;
+            border: 2px solid rgb(86, 87, 88);
+            overflow-y: scroll ;
+            border-radius: 12px;
+        }
+    
+    </style>
+    
+</head>
+<body bgcolor="lightgray">
+    <form action="submit" method="POST">
+        {% csrf_token %}
+    <div class="input">
+        Length of the word<input type="text" name="val" id="val" style="width:50%; border-radius: 10px; height:30px;" /><br><br>
+    </div>
+    <input type="submit" value="submit" name="res" /><br><br>
+</form>
+    <form action="getword" method="POST">
+        {% csrf_token %}
+        
+        {% block word%}
+
+        {% endblock%}
+
+</form>
+</body>
+</html>
