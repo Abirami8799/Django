@@ -13,3 +13,4 @@ class CSVUploadForm(forms.Form):
         'class': 'form-control input',
         'accept': '.csv'
         }), validators=[ validate_file_extension ])
+
